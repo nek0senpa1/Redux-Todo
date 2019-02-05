@@ -19,17 +19,18 @@ function rootOfAllReduxEvil(state = initialState, action) {
       };
       return {
         ...state,
-        todos: [...state.todo, newTodoey]
+        todos: [...state.todos, newTodoey]
       };
-    case TOGGLE_TODO:
-      return {
-        ...state,
-        friends: state.friends.map((friend, index) =>
-          action.payload === index
-            ? { ...friend, besties: !friend.besties }
-            : friend
-        )
-      };
+
+    // case TOGGLE_TODO:
+    //   return {
+    //     ...state,
+    //     friends: state.friends.map((friend, index) =>
+    //       action.payload === index
+    //         ? { ...friend, besties: !friend.besties }
+    //         : friend
+    //     )
+    //   };
     default:
       return state;
   }

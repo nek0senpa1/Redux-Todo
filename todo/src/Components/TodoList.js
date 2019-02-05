@@ -1,7 +1,8 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { connect } from "react-redux";
 
 import { addTodo, toggleTodo } from '../Actions/actions';
+
 
 class TodoList extends React.Component {
   state = {
@@ -12,10 +13,10 @@ class TodoList extends React.Component {
     this.setState({ todoNew: e.target.value });
   };
 
-  addFriend = e => {
+  addyTodo = e => {
     e.preventDefault();
     //call the addNewFriend action creator
-    this.props.addNewFriend(this.state.newFriend);
+    this.props.addTodo(this.state.todoNew);
   };
 
   toggleFriend = (e, index) => {
@@ -26,8 +27,8 @@ class TodoList extends React.Component {
 
   render() {
     return (
-      <Fragment>
-        <h2>Hello friends</h2>
+      <div>
+        <h2>----------------------</h2>
         <div>
           {this.props.todoThings.map((todoWidget, index) => (
             <h4
@@ -41,17 +42,18 @@ class TodoList extends React.Component {
         </div>
         <input
           type="text"
-          value={this.state.newFriend}
+          value={this.state.todoNew}
           onChange={this.handleChanges}
         />
-        <button onClick={this.addFriend}>Add friend</button>
-      </Fragment>
+        <br></br>
+        <button onClick={this.addyTodo}>Add Thing Todo</button>
+      </div>
     );
   }
 }
 
 const mapStateToProps = state => ({
-  todoThings: state.todo
+  todoThings: state.todos
 });
 
 export default connect(
