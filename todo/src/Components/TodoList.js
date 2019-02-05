@@ -19,10 +19,10 @@ class TodoList extends React.Component {
     this.props.addTodo(this.state.todoNew);
   };
 
-  toggleFriend = (e, index) => {
+  toggleTodoey = (e, index) => {
     e.preventDefault();
     //call the action creator
-    this.props.toggleFriend(index);
+    this.props.toggleTodo(index);
   };
 
   render() {
@@ -32,8 +32,8 @@ class TodoList extends React.Component {
         <div>
           {this.props.todoThings.map((todoWidget, index) => (
             <h4
-              //className={friend.besties ? "bestie" : ""}
-              onClick={e => this.toggleFriend(e, index)}
+              className={todoWidget.done ? "done" : "notdone"}
+              onClick={e => this.toggleTodoey(e, index)}
               key={index}
             >
               {todoWidget.todo}

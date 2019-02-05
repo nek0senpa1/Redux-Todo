@@ -11,7 +11,7 @@ class App extends Component {
         <header className="App-header">
          
           <p>
-            :::: THE LIST ::::
+            :::: THE TO-DO LIST ::::
           </p>
           <TodoList />
 

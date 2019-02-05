@@ -5,7 +5,8 @@ import { ADD_TODO, TOGGLE_TODO } from "../Actions/actions";
 const initialState = {
   
   todos: [
-      { todo: "Star Wars Marathon", done: false }
+      { todo: "Star Wars Marathon", done: false },
+      { todo: "Matrix Trilogy Marathon", done: false }
     ]
 };
 
@@ -22,15 +23,15 @@ function rootOfAllReduxEvil(state = initialState, action) {
         todos: [...state.todos, newTodoey]
       };
 
-    // case TOGGLE_TODO:
-    //   return {
-    //     ...state,
-    //     friends: state.friends.map((friend, index) =>
-    //       action.payload === index
-    //         ? { ...friend, besties: !friend.besties }
-    //         : friend
-    //     )
-    //   };
+    case TOGGLE_TODO:
+      return {
+        ...state,
+        todos: state.todos.map((item, index) =>
+          action.payload === index
+            ? { ...item, done: !item.done }
+            : item
+        )
+      };
     default:
       return state;
   }
