@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+import './App.css';
+
+import TodoList from './Components/TodoList';
 
 class App extends Component {
   render() {
@@ -8,16 +11,12 @@ class App extends Component {
         <header className="App-header">
          
           <p>
-            Edit <code>src/App.js</code> and save to reload.
+            :::: THE LIST ::::
           </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+          <TodoList />
+
+          
+          
         </header>
       </div>
     );

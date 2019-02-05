@@ -1,4 +1,6 @@
-export function activey (stateProp = null, action) => {
+
+
+export function activey (stateProp = null, action) {
     console.log('TODOing stuff');
     switch (action.type) {
       case 'TODO_SELECTED':

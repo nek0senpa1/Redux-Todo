@@ -7,10 +7,14 @@ import { createStore } from "redux";
 import { Provider } from "react-redux";
 
 
-const store = createStore();
+
+import rootOfAllReduxEvil from './Reducers/index';
+
+
+const store = createStore(rootOfAllReduxEvil);
 
 ReactDOM.render(
-<Provider>
+<Provider store ={store}>
 <App />
 </Provider>
 , document.getElementById('root'));
